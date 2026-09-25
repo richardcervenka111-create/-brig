@@ -24,6 +24,10 @@ var tt,ttT; K.toast=function(m){ if(!tt){ tt=document.createElement('div'); tt.c
 K.stagger=function(root,max){ if(!root||reduced) return; var kids=root.children,n=Math.min(kids.length,max||14); for(var i=0;i<n;i++){ kids[i].style.setProperty('--i',i); kids[i].classList.add('k-in'); } };
 /* delegated haptics on primary buttons */
 document.addEventListener('pointerdown',function(e){ var b=e.target.closest&&e.target.closest('.k-btn.primary,.k-chip,.k-seg button'); if(b) K.tick(6); },{passive:true});
+/* language persistence for the kit switcher (.lang button[data-l]) */
+(function(){ var KEY='k-lang'; document.addEventListener('click',function(e){ var b=e.target.closest&&e.target.closest('.lang button[data-l]'); if(b){ try{ localStorage.setItem(KEY,b.dataset.l); }catch(x){} } },true);
+  function restore(){ var v=null; try{ v=localStorage.getItem(KEY); }catch(x){} if(!v) return; var b=document.querySelector('.lang button[data-l="'+v+'"]'); if(b&&b.getAttribute('aria-pressed')!=='true') b.click(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',restore); else restore(); })();
 /* sticky header shadow */
 var top=document.querySelector('.k-top.sticky'); if(top){ var on=false; window.addEventListener('scroll',function(){ var s=window.scrollY>8; if(s!==on){ on=s; top.classList.toggle('scrolled',s); } },{passive:true}); }
 })();
