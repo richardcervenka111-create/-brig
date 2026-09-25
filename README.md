@@ -6,7 +6,8 @@ Live: **https://richardcervenka111-create.github.io/-brig/**
 
 ## Was hier liegt
 
-- `index.html`: die Übersichtsseite mit Logo, Beschreibung und Links (Live-Seite, Repository, Redesign-PR) für jedes Projekt.
+- `index.html`: die Startseite. Am Desktop ein drehbares Rad mit allen Projekten (Ziehen, Pfeiltasten, Mausrad; Tippen öffnet), am Telefon ein Rad pro Kategorie mit vier Kategorie-Tasten. Darunter die Liste aller Projekte und die Quellen.
+- `assets/ad/`: das Bild des Hinweis-Banners auf [übrig Bern](https://richardcervenka111-create.github.io/uebrig/), das am Telefon zwischen Leiste und Rad steht.
 - `assets/fonts/`: Manrope Variable (SIL Open Font License 1.1), selbst gehostet, damit keine Anfrage an Google Fonts nötig ist.
 - `kit/kit.css`, `kit/kit.js`: das geteilte Designsystem (Tokens, Buttons, Chips, Splash, Mikro-Interaktionen), so wie es in jedem Projekt eingebettet ist.
 - `kit/logos/`: die SVG-Logos aller Projekte.
